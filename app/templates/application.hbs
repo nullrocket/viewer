@@ -1,5 +1,17 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="mdl-grid">
+{{#mdl-card title='Viewer'}}
+  <div class="mdl-card__supporting-text">
+ Enter an ID to Fetch
+      {{mdl-textfield label='ID' value=id}}
+  </div>
+  {{#mdl-card-actions}}
+    {{mdl-button text='Fetch' action=(perform lookup)}}
+  {{/mdl-card-actions}}
+{{/mdl-card}}
 
-{{outlet}}
+</div>
+<div class="mdl-grid">
+    {{#each results as |result|}}
+        {{endpoint-result value=result}}
+    {{/each}}
+</div>

@@ -1,4 +1,16 @@
 # viewer
+The files required to run are in /dist
+
+Edit the endpoints.json file in /dist to add endpoints to query,  this file has to be valid json with quoted key names and no extraneous commas after the last array item.
+
+Changes to the endpoints.json file in /dist will be lost if you rebuild so make sure and back that file up or add the changes to /public/endpoints.json before rebuilding.
+ 
+ 
+
+
+
+
+# You can skip all of the below unless you want to change anything
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.

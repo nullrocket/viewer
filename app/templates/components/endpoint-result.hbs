@@ -1,0 +1,8 @@
+{{#mdl-card title=value.name class="mdl-cell--12-col"}}
+    <div class="mdl-card__supporting-text">
+        {{json-pretty
+                obj=value.result
+                shouldHighlight=true
+        }}
+    </div>
+{{/mdl-card}}

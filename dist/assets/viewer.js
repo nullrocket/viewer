@@ -410,15 +410,16 @@ define('viewer/controllers/application', ['exports', 'ember', 'ember-concurrency
       return regeneratorRuntime.wrap(function callee$0$0$(context$1$0) {
         while (1) switch (context$1$0.prev = context$1$0.next) {
           case 0:
-            context$1$0.next = 2;
+            this.set('results', []);
+            context$1$0.next = 3;
             return (0, _viewerApiApi.getAll)(this.get('id'));
 
-          case 2:
+          case 3:
             results = context$1$0.sent;
 
             this.set('results', results);
 
-          case 4:
+          case 5:
           case 'end':
             return context$1$0.stop();
         }

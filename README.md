@@ -3,7 +3,8 @@ The files required to run are in /dist
 
 Edit the endpoints.json file in /dist to add endpoints to query,  this file has to be valid json with quoted key names and no extraneous commas after the last array item.
 ```
-{ "data" :[
+{ 
+"data" :[
   {
   "name":"Some name for endpoint",
   "url":"http://some/endpoint/with/no/trailing/slash"
@@ -11,6 +12,7 @@ Edit the endpoints.json file in /dist to add endpoints to query,  this file has 
   ...
  
   ]
+}
 
 ```
 Changes to the endpoints.json file in /dist will be lost if you rebuild so make sure and back that file up or add the changes to /public/endpoints.json before rebuilding.

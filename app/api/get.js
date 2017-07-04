@@ -31,7 +31,7 @@ export default function get(url,params){
     else{
       response.json().then(function(data){
 
-          defered.reject(data);
+          defered.resolve(data);
 
       });
     }

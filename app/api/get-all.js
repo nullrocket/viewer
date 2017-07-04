@@ -21,11 +21,11 @@ export function getAll( id ) {
 
           get(endpoint.url, id)
             .then(( result ) => {
-              callback(null, { name: endpoint.name, result: result });
+              callback(null, { name: endpoint.name, result: result, url:endpoint.url });
             })
             .catch(( err ) => {
 
-                callback(null, { name: endpoint.name, result: err });
+                callback(null, { name: endpoint.name, result: err, url:endpoint.url });
               }
             )
         },

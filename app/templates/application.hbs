@@ -1,8 +1,8 @@
-<div class="mdl-grid">
+<div class="mdl-grid viewer-grid">
 {{#mdl-card title='Viewer'}}
   <div class="mdl-card__supporting-text">
  Enter an ID to Fetch
-      {{mdl-textfield label='ID' value=id}}
+      {{mdl-textfield label='ID' value=id enter=(perform lookup) }}
   </div>
   {{#mdl-card-actions}}
     {{mdl-button text='Fetch' action=(perform lookup)}}
@@ -10,7 +10,7 @@
 {{/mdl-card}}
 
 </div>
-<div class="mdl-grid">
+<div class="mdl-grid viewer-grid">
     {{#each results as |result|}}
         {{endpoint-result value=result}}
     {{/each}}

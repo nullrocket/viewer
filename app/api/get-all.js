@@ -6,7 +6,7 @@ import Ember from 'ember';
 export function getAll( id ) {
 
   let deferred = Ember.RSVP.defer();
-  fetch( '/endpoints.json', {
+  fetch('/endpoints.json', {
     method: 'get',
     credentials: 'include',
     headers: {
@@ -14,18 +14,18 @@ export function getAll( id ) {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
     }
 
-  }).then(function (response ) {
-    response.json().then(function(endPoints) {
+  }).then(function ( response ) {
+    response.json().then(function ( endPoints ) {
       async.map(endPoints.data,
         function ( endpoint, callback ) {
 
           get(endpoint.url, id)
             .then(( result ) => {
-              callback(null, { name: endpoint.name, result: result, url:endpoint.url });
+              callback(null, { name: endpoint.name, result: result, url: endpoint.url });
             })
             .catch(( err ) => {
 
-                callback(null, { name: endpoint.name, result: err, url:endpoint.url });
+                callback(null, { name: endpoint.name, result: err, url: endpoint.url });
               }
             )
         },
@@ -38,7 +38,6 @@ export function getAll( id ) {
 
     deferred.reject(response);
   });
-
 
 
   return deferred.promise;

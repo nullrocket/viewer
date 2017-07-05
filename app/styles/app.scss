@@ -1,4 +1,57 @@
 @import 'material-design-lite';
+@import "bourbon";
+.json-pretty pre {
+outline:none;
+  margin:0px;
+  margin: 5px;
+  font-size: 8pt;
+}
+.AccordionList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+.AccordionToggle {
+  padding: 0.5rem 1rem;
+  background:white;
+  .fa-angle-right {
+    @include transition-property(transform);
+    @include transition-duration(150ms);
+    @include transition-timing-function(ease);
+
+  }
+  &.is-active .fa-angle-right {
+    @include transform(rotate( 90deg ));
+  }
+  &.is-active {
+    border-bottom: 1px solid lightgrey;
+    background : white;
+  }
+}
+
+.AccordionItem {
+  border: 1px solid lightgrey;
+  margin-bottom: 0.5rem;
+}
+.AccordionPanel.is-active {
+  padding: 1rem;
+}
+
+.MultiplePanelsPage {
+  & .AccordionItem > h4 {
+    @include display(flex);
+    @include justify-content(space-between);
+    padding: 0.5rem;
+  }
+  & .AccordionItem-toggles {
+    @include display(flex);
+    margin-top: -8px;
+  }
+  .AccordionToggle.is-active {
+    border: none;
+  }
+}
 body {
   background:#ddd;
 
@@ -8,10 +61,11 @@ body {
  padding-top:0px;
 }
 .title {
-  padding-bottom:8px;
+  font-weight:bold;
 }
 .url-text {
-
+color:blue;
+  margin-left:16px;
 }
 .viewer-grid {
   padding:20px;

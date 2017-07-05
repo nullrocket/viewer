@@ -10,8 +10,29 @@
 {{/mdl-card}}
 
 </div>
+
 <div class="mdl-grid viewer-grid">
-    {{#each results as |result|}}
-        {{endpoint-result value=result}}
+{{#accordion-list as |accordion|}}
+
+    <!-- Iterate over an array of items -->
+    {{#each results as |item|}}
+
+
+
+        <!-- For each element in list create an 'accordion.item' -->
+        {{#accordion.item as |accordionItem|}}
+
+            <!-- Create a 'toggle' and a 'panel' for the item -->
+            {{#accordionItem.toggle}}
+                <i class="fa fa-angle-right"></i>
+               <span class="title"> {{item.name}}</span> <span class="url-text">{{item.url}}</span>
+            {{/accordionItem.toggle}}
+
+            <!-- Clicking on the 'toggle' will display the contents of the 'panel' -->
+            {{#accordionItem.panel}}
+                {{endpoint-result value=item}}
+            {{/accordionItem.panel}}
+        {{/accordion.item}}
     {{/each}}
+{{/accordion-list}}
 </div>
